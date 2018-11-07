@@ -3,10 +3,11 @@ import { RouterModule,Routes,Router }  from '@angular/router'
 
 import { LoginComponent }  from './login/login.component';
 import { RegisterComponent } from './register/register.component'
+import { HeaderBodyComponent } from './header-body/header-body.component';
 
 const router : Routes = [
  
- { path:'',component:LoginComponent,pathMatch:'full'},
+ { path:'',component:HeaderBodyComponent,pathMatch:'full'},
  { path:'login',component:LoginComponent},
  { path:'register',component:RegisterComponent}
 

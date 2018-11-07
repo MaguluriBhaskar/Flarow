@@ -1,3 +1,104 @@
-<p>
-  register works!
-</p>
+<div class="container">
+	<div class='col-sm-12 register'>
+	    <div class="col-sm-12 register-block">
+             <h3 class='text-center register-block-heading'>Flarow Registration</h3>
+             <form #registration='ngForm'  ngNativeValidate>
+              	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Full Name :-*</label>
+             	 	<input type='text' class='form-control' name='fullname' [(ngModel)]="register.full_name" #fullNameRef='ngModel' pattern='\S.*' minlength="3" [ngClass]='fullNameRef.invalid && (fullNameRef.touched || fullNameRef.dirty)?"err":""' placeholder="Full Name" required>
+             	 	<span style='color:red' *ngIf='fullNameRef.errors && fullNameRef.errors.minlength'> Full Name must be 3 characters </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Email:- *</label>
+             	 	<input type='text'  class='form-control' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" name='email' [(ngModel)]="register.email" #emailRef='ngModel' [ngClass]='emailRef.invalid && (emailRef.touched || emailRef.dirty)?"err":""' placeholder="Email" required>
+             	 	<span style='color:red' *ngIf='emailRef.errors && emailRef.errors.pattern'> Enter Valid email </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Password :- *</label>
+             	 	<input type='password' class='form-control'  name='pass' [(ngModel)]="register.password"  #passRef='ngModel' minlength='5' [ngClass]='passRef.invalid && (passRef.touched || passRef.dirty)?"err":""' placeholder="Password" required>
+             	 	<span style='color:red' *ngIf='passRef.errors && passRef.errors.minlength'> Password must be 5 characters </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Conform Password :- *</label>
+             	 	<input type='password' class='form-control' name='pass1' [(ngModel)]="register.conform_password"  #cpassRef='ngModel'  minlength='5' [ngClass]='cpassRef.invalid && (cpassRef.touched || cpassRef.dirty)?"err":""' placeholder="Conform Password" required>
+             	 	<span style='color:red' *ngIf='cpassRef.errors && cpassRef.errors.minlength'> Password must be 5 characters </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Mobile :- *</label>
+             	 	<input type='text' class='form-control' name='mobilenum' [(ngModel)]="register.mobile" #mobRef='ngModel' pattern="[0-9]+" minlength='10' maxlength='10' [ngClass]='mobRef.invalid && (mobRef.touched || mobRef.dirty)?"err":""' placeholder="Mobile" required>
+             	 	<span style='color:red' *ngIf='mobRef.errors && mobRef.errors.pattern'> Mobile number must be a number </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Gender :- *</label>
+             	 	<select  class='form-control' name='gender' [(ngModel)]="register.gender" #genRef='ngModel' [ngClass]='genRef.invalid && (genRef.touched || genRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='M'>Male</option>
+             	 		<option value='F'>Female</option>
+             	 	</select>
+             	 
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Type :- *</label>
+             	 	<select  class='form-control' name='type' [(ngModel)]="register.type"  #typeRef='ngModel' [ngClass]='typeRef.invalid && (typeRef.touched || typeRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='Owner'>Owner</option>
+             	 		<option value='Seller'>Seller</option>
+             	 		<option value='Mediator'>Mediator</option>
+             	 	</select>
+             	 
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Country :- *</label>
+             	 	<select  class='form-control' name='country' [(ngModel)]="register.country" #countyRef='ngModel'  [ngClass]='countyRef.invalid && (countyRef.touched || countyRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='1'>India</option>
+             	 		<option value='2'>USA</option>
+             	 		<option value='3'>China</option>
+             	 	</select>
+             	 	
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> City :- *</label>
+             	 	<select  class='form-control' name='cittyy' [(ngModel)]="register.city" #cityRef='ngModel'  [ngClass]='cityRef.invalid && (cityRef.touched || cityRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='1'>Hyderabad</option>
+             	 		<option value='2'>Bangloore</option>
+             	 		<option value='3'>Mumbai</option>
+             	 	</select>
+             	 
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Pin Code :- *</label>
+             	 	<input type='text' class='form-control' name='city' [(ngModel)]="register.pincode" #pinRef='ngModel'  [ngClass]='pinRef.invalid && (pinRef.touched || pinRef.dirty)?"err":""'pattern='[0-9]+' placeholder="Pin Code" required>
+             	 	<span style='color:red' *ngIf='pinRef.errors && pinRef.errors.pattern'> Pincode number must be a number </span>
+             	 </div>
+             	</div>
+             	<div class='col-sm-12'>
+         			<div class='text-center'>
+         				<button type="button" (click)='Flarowregister()' [disabled]='!registration.form.valid' class='btn btn-primary' > SingUp</button>
+         			</div>
+         			<br/>
+             	</div>
+             </form>
+	    </div>
+	</div>
+</div>

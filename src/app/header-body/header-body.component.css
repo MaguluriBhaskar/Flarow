@@ -1,0 +1,32 @@
+.section-1{
+    height:400px;
+    color:white;
+}
+.section-1-img{
+	margin:0px;
+	padding:0px;
+	background-size: 100% 100%;
+    background-image:url('../../assets/images/section-1.jpg');
+    background-attachment: none;
+    background-repeat: no-repeat;
+}
+.setion-1-text-center{
+	margin-top:15%;
+}
+.section-2{
+	background-color: silver;
+}
+.section-2-property-heading{
+	color:silver;
+	border-bottom: 5px solid silver;
+	font-size:40px; 
+}
+.section-2-property-details{
+	margin-top:10px;
+	background-color:#ffffff;
+	box-shadow:0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.section-2-property-details-heading{
+	font-size:15px;
+	color:black;
+}

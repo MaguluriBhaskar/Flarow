@@ -5,17 +5,18 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
+import { RegisterComponent } from './register/register.component';
+import { HeaderBodyComponent } from './header-body/header-body.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { BaseService }  from './services/base-service'
 
-
 import { AppRouter }  from './app.router';
-import { RegisterComponent } from './register/register.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HeaderBodyComponent, ContactUsComponent],
   imports: [  BrowserModule, 
               FormsModule, 
               HttpModule,

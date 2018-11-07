@@ -66,9 +66,9 @@
              	 	<label> Country :- *</label>
              	 	<select  class='form-control' name='country' [(ngModel)]="register.country" #countyRef='ngModel'  [ngClass]='countyRef.invalid && (countyRef.touched || countyRef.dirty)?"err":""' required>
              	 		<option value=''>Select</option>
-             	 		<option value='Owner'>India</option>
-             	 		<option value='Seller'>USA</option>
-             	 		<option value='Mediator'>China</option>
+             	 		<option value='1'>India</option>
+             	 		<option value='2'>USA</option>
+             	 		<option value='3'>China</option>
              	 	</select>
              	 	
              	 </div>
@@ -78,9 +78,9 @@
              	 	<label> City :- *</label>
              	 	<select  class='form-control' name='cittyy' [(ngModel)]="register.city" #cityRef='ngModel'  [ngClass]='cityRef.invalid && (cityRef.touched || cityRef.dirty)?"err":""' required>
              	 		<option value=''>Select</option>
-             	 		<option value='Owner'>Hyderabad</option>
-             	 		<option value='Seller'>Bangloore</option>
-             	 		<option value='Mediator'>Mumbai</option>
+             	 		<option value='1'>Hyderabad</option>
+             	 		<option value='2'>Bangloore</option>
+             	 		<option value='3'>Mumbai</option>
              	 	</select>
              	 
              	 </div>

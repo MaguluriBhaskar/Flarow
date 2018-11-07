@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm,Validators }  from '@angular/forms';
 
 import { RegisterModel } from '../models/register.model';
+import { BaseService }  from '../services/base-service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   register:RegisterModel;
 
-  constructor() {
+  constructor(private baseSerive:BaseService) {
       this.register = new RegisterModel();
       this.register.gender='';
       this.register.type='';
@@ -25,6 +26,13 @@ export class RegisterComponent implements OnInit {
 
   Flarowregister(){
       console.log('register data',this.register);
+     this.baseSerive.post('/api/1/user/register',this.register)
+     .subscribe((resp)=>{
+         console.log(resp);
+     },
+     (err)=>{
+         console.log('err',err);
+     });
   }
 
 }

@@ -1,0 +1,82 @@
+<div class="container">
+	<div class='col-sm-12 register'>
+	    <div class="col-sm-12 register-block">
+             <h3 class='text-center register-block-heading'>Create property</h3>
+             <form #registration='ngForm'  ngNativeValidate>
+              	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Title:-*</label>
+             	 	<input type='text' class='form-control' name='fullname' [(ngModel)]="createProperty.title" #titleRef='ngModel'  minlength="3" [ngClass]='titleRef.invalid && (titleRef.touched || titleRef.dirty)?"err":""' placeholder="ex:- Sri Sail Builders" required>
+             	 	<span style='color:red' *ngIf='titleRef.errors && titleRef.errors.minlength'> Title Name must be 3 characters </span>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Type :- *</label>
+             	 	<select  class='form-control' name='gender' [(ngModel)]="createProperty.type" #typeRef='ngModel' [ngClass]='typeRef.invalid && (typeRef.touched || typeRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='F'>Flat</option>
+             	 		<option value='R'>Room</option>
+             	 		<option value='A'>Appartment</option>
+             	 	</select>
+             	 
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+             	 <div class='form-group'>
+             	 	<label> Location :- *</label>
+             	 	<select  class='form-control' name='Location' [(ngModel)]="createProperty.location" #locationRef='ngModel'  [ngClass]='locationRef.invalid && (locationRef.touched || locationRef.dirty)?"err":""' required>
+             	 		<option value=''>Select</option>
+             	 		<option value='1'>Hyderabad</option>
+             	 		<option value='2'>Bangloore</option>
+             	 		<option value='3'>Mumbai</option>
+             	 	</select>
+             	 </div>
+             	</div>
+             	<div class="col-sm-6">
+	              <div class='col-sm-4'>
+	             	 <div class='form-group'>
+	             	 	<label> Width :- *</label>
+	             	 	<input type='text' class='form-control' name='Width' [(ngModel)]="createProperty.width" #widthRef='ngModel'  [ngClass]='widthRef.invalid && (widthRef.touched || widthRef.dirty)?"err":""'pattern='[0-9]+' placeholder="width" required>
+	             	 	<span style='color:red' *ngIf='widthRef.errors && widthRef.errors.pattern'> Width  must be a number </span>
+	             	 </div>
+             	  </div>
+             	  <div class='col-sm-4'>
+	             	  <div class='form-group'>
+	             	 	<label> Length :- *</label>
+	             	 	<input type='text' class='form-control' name='length' [(ngModel)]="createProperty.length" #lengthRef='ngModel'  [ngClass]='lengthRef.invalid && (lengthRef.touched || lengthRef.dirty)?"err":""'pattern='[0-9]+' placeholder="Pin Code" required>
+	             	 	<span style='color:red' *ngIf='lengthRef.errors && lengthRef.errors.pattern'> Length  must be a number </span>
+	             	 </div>
+	              </div>
+	               <div class='col-sm-4'>
+	             	 <div class='form-group'>
+	             	 	<label> Cost :- *</label>
+	             	 	<input type='text' class='form-control' name='cost' [(ngModel)]="createProperty.cost" #costRef='ngModel'  [ngClass]='costRef.invalid && (costRef.touched || costRef.dirty)?"err":""'pattern='[0-9]+' placeholder="Cost" required>
+	             	 	<span style='color:red' *ngIf='costRef.errors && costRef.errors.pattern'> Cost must be a number </span>
+	             	 </div>
+             	  </div>
+	             </div>
+	              <div class="col-sm-6">
+             		 <div class='form-group'>
+	             	 	<label> Description:-*</label>
+	             	 	<textarea class='form-control' name='des' [(ngModel)]="createProperty.description" #desRef='ngModel' [ngClass]='desRef.invalid && (desRef.touched || desRef.dirty)?"err":""' placeholder="Description" required></textarea>
+	             	 	
+             	     </div>
+             	 </div>
+             	  <div class="col-sm-6">
+             		 <div class='form-group'>
+	             	 	<label> Address :-*</label>
+	             	 	<textarea class='form-control' name='address' [(ngModel)]="createProperty.address" #addresRef='ngModel' [ngClass]='addresRef.invalid && (addresRef.touched || addresRef.dirty)?"err":""' placeholder="Address" required></textarea>
+	             	 	
+             	     </div>
+             	 </div>
+             	<div class='col-sm-12'>
+         			<div class='text-center'>
+         				<button type="button" (click)='createPropertyMethod()' [disabled]='!registration.form.valid' class='btn btn-primary' >Create Property</button>
+         			</div>
+         			<br/>
+             	</div>
+             </form>
+	    </div>
+	</div>
+</div>

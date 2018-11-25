@@ -1,3 +1,22 @@
+<app-navigation-bar></app-navigation-bar>
 <div class='col-sm-12 login'>
-	<h1>Login Works</h1>
+	<div class='col-sm-4 login-section'>
+		<br/><br/><br/>
+		<h3 class='text-center login-section-heading'>Sign In</h3>
+		<form #loginForm="ngForm" ngNativeValidate>
+			<div class='col-sm-12'>
+		 	  <input class='form-control field' type='text' name='uname' [(ngModel)]='login.user_name' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" #unameRef='ngModel' [ngClass]="unameRef.invalid && (unameRef.touched ||unameRef.dirty)?'login-error':''"  placeholder="Enter your email" required>
+		 	  <p class='error-msg' *ngIf='unameRef.errors && unameRef.errors.pattern' >Please enter validemail </p>
+		    </div>
+		    <div class='col-sm-12'>
+		 	  <input class='form-control field' type='password' name='password' [(ngModel)]='login.password' placeholder="Enter your password" #passwordRef='ngModel' [ngClass]="passwordRef.invalid && (passwordRef.touched ||passwordRef.dirty)?'login-error':''" pattern="\S.*" required>
+		 	  <p class='error-msg' *ngIf='passwordRef.errors && passwordRef.errors.pattern' >Please enter password</p>
+		    </div>
+		    <div class='col-sm-12'>
+		 	  <button class='login-btn btn btn-block btn-primary' (click)='loginMethod()' [disabled]='!loginForm.form.valid' type='text'><strong>Sign Up</strong></button>
+		    </div>
+	    </form>
+	    <br/><br/>
+	    <a href='javascript:void(0)'><p class='text-center forgot-password'>ForgotPassword?</p></a>
+	</div>
 </div>

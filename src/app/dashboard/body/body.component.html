@@ -1,0 +1,39 @@
+<div class='container'>
+	<div class='col-sm-12'>
+		<h1 class='text-center'>
+		  <span class='section-2-property-heading '>All Properties</span>
+		</h1>
+	</div>
+	<div *ngFor='let list of allPropertyList' class='col-sm-12 section-2-property-details'>
+		<div class='media'>
+			<div class='media-left media-middle'>
+				<img src='../../assets/images/user.png'  class='media-object' style='width:180px;height:180px;margin:5px;'>
+			</div>
+			<div class='media-body'>
+				<div class='media-heading'>
+			     	<h2><strong>{{list.title}}</strong></h2>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Owner</b> :{{list.fullname}}</h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Cost</b> : ${{list.cost}} Cr</h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Type</b>:{{sharedService.getPropertyType(list.type)}}</h4>
+				</div>
+				<div class='col-sm-6 '>
+                     <h4><b>Address</b> :
+                     		{{list.address}} 
+                     </h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Location</b> : {{sharedService.getPropertyLocation(list.location)}}</h4>
+				</div>
+				<div class='col-sm-6 text-right'>
+                     <button class='btn btn-success' [routerLink]='["viewproperty"]'>View</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+.header{
+	border-radius:0px;
+	background-color: #b71c1c;
+	margin:0px;
+	padding:0px;
+}
+.header-name{
+    color:white;
+ 	font-family:'open_sansregular', Helvetica, Arial, sans-serif;
+ 	font-size:2em;
+ 	margin-left:20px !important;
+}
+.header-left-nav{
+	margin-left:24px;
+}
+.header-right-nav{
+	margin-right:34px;
+}
+
+li a{
+	color:white;
+	font-weight:bold;
+}
+
+@media screen and (max-width:767px){
+	.header-left-nav{
+		margin-left:0px;
+	}
+	.header-right-nav{
+	    margin-right:44px;
+    }
+}

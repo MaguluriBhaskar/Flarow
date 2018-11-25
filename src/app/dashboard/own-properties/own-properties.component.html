@@ -1,0 +1,49 @@
+<div class='container'>
+	<div class='col-sm-12'>
+		<div class='col-sm-6'>
+			<h1 class='text-left'>
+			  <span class='section-2-property-heading '>Own Properties</span>
+			</h1>
+			<hr/>
+		</div>
+		<div class='col-sm-6'>
+			<h1 class='text-right'>
+			     <button class='btn btn-primary' [routerLink]='["createproperty"]'>+ Create Property</button>
+			</h1>
+			<hr/>
+		</div>
+	</div>
+	<div *ngFor='let list of ownPropertyList' class='col-sm-12 section-2-property-details'>
+		<div class='media'>
+			<div class='media-left media-middle'>
+				<img src='../../assets/images/user.png'  class='media-object' style='width:180px;height:180px;margin:5px;'>
+			</div>
+			<div class='media-body'>
+				<div class='media-heading'>
+			     	<h2><strong>{{list.title}}</strong></h2>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Owner</b> : {{name}}</h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Cost</b> : ${{list.cost}} Cr</h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Type</b>:{{sharedService.getPropertyType(list.type)}}</h4>
+				</div>
+				<div class='col-sm-6 '>
+                     <h4><b>Address</b> :
+                     		{{list.address}} 
+                     </h4>
+				</div>
+				<div class='col-sm-6'>
+                     <h4><b>Location</b> : {{sharedService.getPropertyLocation(list.location)}}</h4>
+				</div>
+				<div class='col-sm-6 text-right'>
+                     <button class='btn btn-success' (click)='naviGateToEdit(list)'>View</button>
+                      <button class='btn btn-success' [routerLink]='["viewproperty"]'>Edit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

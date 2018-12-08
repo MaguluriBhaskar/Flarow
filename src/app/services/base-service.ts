@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 
 export class BaseService {
  
-  baseUrl:any='http://192.168.43.28:1638';
+  baseUrl:any='http://localhost:1638';
 
 	constructor(private http:Http){
 
